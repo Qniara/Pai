@@ -89,6 +89,38 @@
         // }
         // while(i<=10);
 
+        //Funkcje
+        function f1(x){
+            var wynik=1;
+            if(x==0){
+                return 1;
+            }
+            else{
+                for(var i=1;i<=x;i++){
+                    wynik=wynik*2;
+                }
+                return wynik;
+            }
+        }
+        function f2(x){
+            var wynik=1;
+            if(x==0){
+                return 1;
+            }
+            else{
+                var wynik=2*f2(x-1);
+                return wynik;
+            }
+        }
+        var n=Number(prompt("Daj liczbe: "));
+        if(n>0){
+            alert(f1(n));
+            document.write(f2(n));
+        }
+        else{
+            alert("Zjebałeś.")
+        }
+
 
 
 
@@ -111,7 +143,7 @@
         // document.write("Imie: "+imie+"<br>");
         // document.write("Nazwisko: "+nazwisko+"<br>");
 
-        
+
         //Instrukcje sterujace
 
         // Zad.1
