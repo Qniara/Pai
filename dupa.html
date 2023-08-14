@@ -283,6 +283,15 @@
         //         </tr>
         //     </table>
         // </form>
+        function oblicz(){
+            var x=Number(document.getElementById("l1").value);
+            var x=Number(document.getElementById("l2").value);
+            var x=document.getElementById("wyb").value;
+            if(z=="d1") document.getElementById("wynik").innerHTML=x+y;
+            else if(z=="d2") document.getElementById("wynik").innerHTML=x-y;
+            else if(z=="d3") document.getElementById("wynik").innerHTML=x*y;
+            else if(z=="d4") document.getElementById("wynik").innerHTML=x/y;
+        }
 
 
 
