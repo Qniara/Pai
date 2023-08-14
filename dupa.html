@@ -12,16 +12,16 @@
             border:2px solid black;
         }
         table{
-            width:400px;
+            width:600px;
             height:50px;
             text-align: center;
             border-collapse: collapse;
         }
         #wynik{
             background-color: aqua;
-            width:100px;
             text-align: center;
             color:aliceblue;
+            width:250px;
         }
     </style>
 </head>
@@ -299,6 +299,7 @@
             else if(z=="d4") document.getElementById("wynik").innerHTML=x/y;
         }
         </script>
+        <from>
         <table>
             <tr>
                 <td>
@@ -306,14 +307,25 @@
                 </td>
                 <td>
                     <select id="wyb">
-                        <option value="+"></option>
-                        <option value="-"></option>
-                        <option value="*"></option>
-                        <option value="/"></option>
+                        <option value="d1">+</option>
+                        <option value="d2">-</option>
+                        <option value="d3">*</option>
+                        <option value="d4">/</option>
                     </select>
+                </td>
+                <td>
+                    <input type="text" id="l2">
+                </td>
+                <td>=</td>
+                <td id="wynik"></td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <input type="button" value="Oblicz" onclick="oblicz()">
                 </td>
             </tr>
         </table>
+        </from>
         <script>
 
 
