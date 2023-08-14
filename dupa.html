@@ -17,6 +17,12 @@
             text-align: center;
             border-collapse: collapse;
         }
+        #wynik{
+            background-color: aqua;
+            width:100px;
+            text-align: center;
+            color:aliceblue;
+        }
     </style>
 </head>
 <body> 
@@ -292,6 +298,27 @@
             else if(z=="d3") document.getElementById("wynik").innerHTML=x*y;
             else if(z=="d4") document.getElementById("wynik").innerHTML=x/y;
         }
+        </script>
+        <table>
+            <tr>
+                <td>
+                    <input type="text" id="l1">
+                </td>
+                <td>
+                    <select id="wyb">
+                        <option value="+"></option>
+                        <option value="-"></option>
+                        <option value="*"></option>
+                        <option value="/"></option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <script>
+
+
+
+
 
 
 
