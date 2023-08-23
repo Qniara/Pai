@@ -7,6 +7,7 @@
     <style>
         body{
             background-color: rgb(191, 122, 255);
+            X-Content-Type-Options: nosniff;
         }
         table, tr, td{
             border:2px solid black;
@@ -476,16 +477,31 @@
         // var y=Number(prompt("Podaj wartosc: "));
         // alert(f(x,y));
 
-        // 2.Stwórz interfejs użytkownika z dwoma polami do wprowadzania liczb oraz przyciskami dla podstawowych operacji (dodawanie, odejmowanie, mnożenie, dzielenie). 
-        //Wyświetl wynik na stronie po wybraniu operacji.
+        // 2.Stwórz dwa pola tekstowe, w których użytkownik może wpisać dwie liczby. Dodaj przycisk "Dodaj", który po kliknięciu wyświetla sumę tych dwóch liczb.
 
         // 3.Komputer losuje liczbę z zakresu od 1 do 100. Użytkownik ma za zadanie odgadnąć tę liczbę. Program powinien informować użytkownika, czy podana liczba jest 
         //za duża, za mała, czy poprawna.
+        // var x=parseInt(Math.random()*100+1);
+        // var y=0;
+        // while(y!=x){
+        //     y=Number(prompt("Podaj liczbe: "));
+        //     if(y>x){
+        //         alert("Za duzo");
+        //     }
+        //     else if(x>y){
+        //         alert("Za malo");
+        //     }
+        //     else{
+        //         alert("Trafilas");
+        //     }
+        // }
 
         // 4.Napisz prosty timer, który odlicza czas od zadanej przez użytkownika liczby sekund do zera. Wyświetlaj pozostały czas na stronie i powiadom użytkownika, 
         //gdy odliczanie dobiegnie końca.
 
-        // 5.Stwórz tablicę z kilkoma cytatami. Po kliknięciu przycisku "Pokaż losowy cytat" na stronie, wyświetl jeden z nich wybrany losowo.
+        // 5.Poproś użytkownika o podanie liczby. Następnie odliczaj od tej liczby do zera, wyświetlając każdą liczbę w konsoli.
+
+        //6.Stwórz kilka przycisków, z których każdy reprezentuje inny kolor. Po kliknięciu w jeden z przycisków, zmieniaj kolor tła strony na wybrany kolor.
     </script>
     
 </body>
