@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defekcja</title>
+    <style>
+        body{
+            background-color: rgb(246, 127, 255);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function formularz(){
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            alert("Wynik to: "+a*b);
+        }
+
+    </script>
+    <form>
+        <h1>Podaj bok a: </h1>
+        <input type="number" name="pole" id="a">
+        <h1>Podaj bok b: </h1>
+        <input type="number" name="pole" id="b">
+        <br><br>
+        <input type="button" value="Wyslij" OnClick="formularz()">
+    </form>
+</body>
+</html>
