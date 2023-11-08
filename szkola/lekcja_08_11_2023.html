@@ -102,27 +102,46 @@
         // }
     </script>
 
-    <fieldset>
+    <!-- <fieldset>
         <legend>Wybierz</legend>
         <input type="checkbox" value="chiena" name="ptaki">chiena<br>
         <input type="checkbox" name="ptaki" value="lew">lew<br>
         <input type="checkbox" name="ptaki" value="paw">paw<br>
         <br>
         <input type="button" value="wyslij" onClick="funkcja3()">
+    </fieldset> -->
+    <script>
+        // function funkcja3(){
+        //     var f=document.getElementsByName('ptaki');
+        //     var v='';
+        //     for(var i=0;i<f.length;i++){
+        //         if(f[i].checked){
+        //             v=v+' '+f[i].value;
+        //         }
+        //     }
+        //     if(v==''){
+        //         v="Nie zaznaczyles nic";
+        //     }
+        //     alert(v);
+        // }
+    </script>
+
+    <fieldset>
+        <legend>Wybierz</legend>
+        <select id="ssaki">
+            <option value="kot">kot</option>
+            <option value="koń">koń</option>
+            <option value="kret">kret</option>
+        </select>
+        <br>
+        <input type="button" value="wyslij" onClick="funkcja4()">
     </fieldset>
     <script>
-        function funkcja3(){
-            var f=document.getElementsByName('ptaki');
-            var v='';
-            for(var i=0;i<f.length;i++){
-                if(f[i].checked){
-                    v=v+' '+f[i].value;
-                }
-            }
-            if(v==''){
-                v="Nie zaznaczyles nic";
-            }
-            alert(v);
+        function funkcja4(){
+            var s=document.getElementById("ssaki");
+            alert("Value przechowuje: "+s.value);
+            alert("Wybrane pole ma numer: "+s.selectedIndex);
+            alert("Ilosc wszystkich pol to: "+s.length);
         }
     </script>
 </body>
