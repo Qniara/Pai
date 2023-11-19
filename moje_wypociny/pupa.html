@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLAAAACK CELEBRATION</title>
+    <style>
+        body{
+            background-color: rgb(255, 136, 229);
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var x=0;
+        while(x==0){
+            var name=prompt("Podaj imie: ");
+            if(name==""){
+                alert("Podaj imie.");
+            }
+            else{
+                document.write("Siemka "+name+"<br>");
+                x=1;
+            }
+        }
+        x=0;
+        while(x==0){
+            var age=Number(prompt("Podaj wiek: "));
+            if(age==""){
+                alert("Podaj wiek.");
+            }
+            else{
+                if(age>=18){
+                    document.write("Jestes pelnoletni.");
+                }
+                else{
+                    document.write(name+" nie jestes pelnoletni.");
+                }
+                x=1;
+            }
+        }
 
+    </script>
+</body>
+</html>
