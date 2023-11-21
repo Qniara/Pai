@@ -15,7 +15,7 @@
         var x=0;
         while(x==0){
             var name=prompt("Podaj imie: ");
-            if(name==""){
+            if(name=="" || isNaN(name)==false){
                 alert("Podaj imie.");
             }
             else{
@@ -26,7 +26,7 @@
         x=0;
         while(x==0){
             var age=Number(prompt("Podaj wiek: "));
-            if(age==""){
+            if(age=="" || isNaN(age)==true){
                 alert("Podaj wiek.");
             }
             else{
