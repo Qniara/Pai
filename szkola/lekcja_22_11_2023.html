@@ -4,47 +4,90 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
         <style>
+            table{
+                border-color: 3px black;
+            }
+            p{
+                font-size: 45px;
+                font-family: 'Times New Roman';
+                text-align: center;
+            }
             body{
                 background-color: rgb(255, 137, 216);
             }
             div {height: 100vh;
                     width: 50%;}
     
-            content {display: flex;
-                    height: auto;
-                    width: auto;
-                    flex-direction: column;}
+            content {
+                display: flex;
+                height: auto;
+                width: auto;
+                flex-direction: column;
+            }
     
-            body {margin: 0px;
-                    padding: 0px;
-                    display: flex;
-                    flex-direction: row;}
+            body {
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                flex-direction: row;
+            }
     
-            div:nth-of-type(1) {display: flex;
-                                align-items: center;
-                                justify-content: center;}
+            div:nth-of-type(1) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
     
-            button {align-self: flex-end;}
+            button {
+                align-self: flex-end;
+            }
     
-            #cent {display: flex;
-                    justify-content: center;
-                    align-items: center;}
+            #cent {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         </style>
     </head>
     <body>
-        <div class="left-box">
+        <!-- <div class="left-box">
             <input type="text" id="kolor" name="kolor"><br>
-            <button onClick="funkcja()">Zmień kolor</button>
+            <center><button onClick="funkcja()">Zmień kolor</button></center>
         </div>
         <div id="right-box" class="right-box">
+            <center><p>Findus</p></center>
+        </div> -->
+        <script>  
+        // function funkcja(){
 
-        </div>
+        //     document.getElementById("right-box").style.color = document.getElementById("kolor").value;
+        // }
+        </script>
+
+
         <script>
-            
-        function funkcja(){
-
-            document.getElementById("right-box").style.backgroundColor = document.getElementById("kolor").value;
-        }
+            let liczby=[0,0,0,0,0,0];
+            var i=0, a;
+            document.write("<table>");
+            do{
+                var x=0;
+                var c=1;
+                while(x==0){
+                    a=parseInt(Math.random()*49+1);
+                    liczby[i]=a;
+                    for(var n=0;n<6;n++){
+                        if(a==liczby[n]){
+                            c=0;
+                        }
+                    }
+                    if(c==0){
+                        x=1;
+                    }
+                }
+                document.write("<tr><td>"+a+"</td></tr>");
+                i++;
+            }while(i<6);
+            document.write("</table>");
         </script>
     </body>
 </html>
