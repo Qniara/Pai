@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona</title>
     <style>
+        img{
+            width:45%;
+        }
         body{
             background-color: rgb(191, 122, 255);
         }
@@ -219,113 +222,26 @@
         // </div>
 
         //Obsługa formukarzy
-        // function dupa(form){
-        //     if(form.imie.value==""){
-        //         document.write("Imie dawaj a nie cwaniakujesz");
-        //     }
-        //     else{
-        //         document.write("Siema "+form.imie.value);
-        //     }
+        // function Ogoniasty() {
+        //     document.getElementById("ogoniasty").innerHTML = "Ogoniasty";
         // }
-        // W HTML
-        // <form method="post" name="form"> 
-        //     Podaj swoje imie: <input type="text" name="imie"><br>
-        //     <input type="button" name="p1" value="Klikaj" onClick="dupa(this.form)">
-        // </form>
-        // function pobierz(){
-        //     f=document.forms[0];
-        //     napis="";
-        //     braki=false;
-        //     if(f.imie.value==""){
-        //         braki=true;
-        //         napis+="imie\n";
-        //     }
-        //     else if(f.nazwisko.value==""){
-        //         braki=true;
-        //         napis+="imie\n";
-        //     }
-        //     else if(f.data.value==""){
-        //         braki=true;
-        //         napis+="imie\n";
-        //     }
-        //     if(braki==true){
-        //         alert("Niepodałaś "+napis);
-        //     }
-        //     else{
-        //         alert("Brawo nie jesteś debilem");
-        //     }
+
+        // function Basix() {
+        //         ocument.getElementById("basix").innerHTML = "Basislaw";
         // }
-        // W HTML
-        // <form method="post" name="form">
-        //     <table>
+        //W HTML
+        // <center>
+        //     <table id="dane">
         //         <tr>
         //             <td>
-        //                 Podaj imie: 
+        //                 <img src="ogoniasty.JPG" id="ogoniasty" onclick="Ogoniasty()">
         //             </td>
         //             <td>
-        //                 <input type="text" name="imie">
-        //             </td>
-        //         </tr>
-        //         <tr>
-        //             <td>
-        //                 Podaj naziwsko: 
-        //             </td>
-        //             <td>
-        //                 <input type="text" name="nazwisko">
-        //             </td>
-        //         </tr>
-        //         <tr>
-        //             <td>
-        //                 Podaj date urodzenia: 
-        //             </td>
-        //             <td>
-        //                 <input type="data" name="data" size="4">
-        //             </td>
-        //         </tr>
-        //         <tr>
-        //             <td colspan="2" align="center">
-        //                 <input type="button" name="pszycizg" value="Klikaj" onclick="pobierz()">
+        //                 <img src="basia.JPG" id="basix" onclick="Basix()">
         //             </td>
         //         </tr>
         //     </table>
-        // </form>
-        // function oblicz(){
-        //     var x=Number(document.getElementById("l1").value);
-        //     var x=Number(document.getElementById("l2").value);
-        //     var x=document.getElementById("wyb").value;
-        //     if(z=="d1") document.getElementById("wynik").innerHTML=x+y;
-        //     else if(z=="d2") document.getElementById("wynik").innerHTML=x-y;
-        //     else if(z=="d3") document.getElementById("wynik").innerHTML=x*y;
-        //     else if(z=="d4") document.getElementById("wynik").innerHTML=x/y;
-        // }
-        // W HTML
-        // <from>
-        // <table>
-        //     <tr>
-        //         <td>
-        //             <input type="text" id="l1">
-        //         </td>
-        //         <td>
-        //             <select id="wyb">
-        //                 <option value="d1">+</option>
-        //                 <option value="d2">-</option>
-        //                 <option value="d3">*</option>
-        //                 <option value="d4">/</option>
-        //             </select>
-        //         </td>
-        //         <td>
-        //             <input type="text" id="l2">
-        //         </td>
-        //         <td>=</td>
-        //         <td id="wynik"></td>
-        //     </tr>
-        //     <tr>
-        //         <td colspan="5">
-        //             <input type="button" value="Oblicz" onclick="oblicz()">
-        //         </td>
-        //     </tr>
-        // </table>
-        // </from>
+        // </center>
 
 
 
@@ -455,113 +371,6 @@
         // sr=sr/ilo;
         // document.write("<br>");
         // document.write(sr);
-
-
-
-
-
-
-        //ZADNIA OD WUJKA GPT
-        // 1.Napisz funkcję, która przelicza temperaturę z Celsjusza na Fahrenheita i odwrotnie. Użytkownik powinien mieć możliwość wyboru jednostki docelowej.
-        // function f(x,y){
-        //     if(x==1){
-        //         wynik=(y - 32) * 5/9
-        //     }
-        //     else if(x==2){
-        //         wynik=(y * 9/5) + 32;
-        //     }
-        //     return(wynik);
-        // }
-        // var x=Number(prompt("F->C = 1, C->F = 2"));
-        // var y=Number(prompt("Podaj wartosc: "));
-        // alert(f(x,y));
-
-        // 2.Stwórz dwa pola tekstowe, w których użytkownik może wpisać dwie liczby. Dodaj przycisk "Dodaj", który po kliknięciu wyświetla sumę tych dwóch liczb.
-        // function suma(){
-        //     var x=Number(form.x.value);
-        //     var y=Number(form.y.value);
-        //     var wynik=x+y;
-        //     alert(wynik);
-        // }
-        // W HTML
-        // <form method="post" name="form">
-        //     <table>
-        //         <tr>
-        //             <td>
-        //                 <input type="text" name="x">
-        //             </td>
-        //             <td><h1>+</h1></td>
-        //             <td>
-        //                 <input type="text" name="y">
-        //             </td>
-        //             <td><h1>=</h1></td>
-        //             <td>
-        //                 <input type="button" name="baton" value="Dodaj" onclick="suma()">
-        //             </td>
-        //         </tr>
-        //     </table>
-        // </form>
-
-        // 3.Komputer losuje liczbę z zakresu od 1 do 100. Użytkownik ma za zadanie odgadnąć tę liczbę. Program powinien informować użytkownika, czy podana liczba jest 
-        //za duża, za mała, czy poprawna.
-        // var x=parseInt(Math.random()*100+1);
-        // var y=0;
-        // while(y!=x){
-        //     y=Number(prompt("Podaj liczbe: "));
-        //     if(y>x){
-        //         alert("Za duzo");
-        //     }
-        //     else if(x>y){
-        //         alert("Za malo");
-        //     }
-        //     else{
-        //         alert("Trafilas");
-        //     }
-        // }
-
-        // 4.Napisz prosty timer, który odlicza czas od zadanej przez użytkownika liczby sekund do zera. Wyświetlaj pozostały czas na stronie i powiadom użytkownika, 
-        //gdy odliczanie dobiegnie końca.
-        // var x=Number(prompt("Ile sekund napisz: "));
-        // for(var i=x;i>=0;i--){
-        //     if(i==0){
-        //         document.write("Odliczanie zakończone");
-        //     }
-        //     else{
-        //         alert(i);
-        //     }
-        // }
-
-        // 5.Poproś użytkownika o podanie liczby. Następnie odliczaj od tej liczby do zera, wyświetlając każdą liczbę w konsoli.
-        // var x=Number(prompt("Daj liczbe: "));
-        // for(var i=x;i>=0;i--){
-        //     document.write(i+"<br>");
-        // }
-
-        //6.Stwórz kilka przycisków, z których każdy reprezentuje inny kolor. Po kliknięciu w jeden z przycisków, zmieniaj kolor tła strony na wybrany kolor.
-        // function ruszoffy(){
-        //     document.body.style.backgroundColor="pink";
-        // }
-        // function niebieski(){
-        //     document.body.style.backgroundColor="blue";
-        // }
-        // function zielony(){
-        //     document.body.style.backgroundColor="green";
-        // }
-        // W HTML
-        // <table>
-        //     <tr>
-        //         <td>
-        //             <input type="button" name="baton1" value="Klikaj" onclick="ruszoffy()">
-        //         </td>
-        //         <td>
-        //             <input type="button" name="baton2" value="Klikaj" onclick="niebieski()">
-        //         </td>
-        //         <td>
-        //             <input type="button" name="baton3" value="Klikaj" onclick="zielony()">
-        //         </td>
-        //     </tr>
-        // </table>
     </script>
-    
 </body>
 </html>
