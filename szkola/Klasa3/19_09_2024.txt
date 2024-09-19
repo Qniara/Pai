@@ -1,0 +1,34 @@
+Program - narzędzie wykonujące działania zgodne z przeznaczeniem. Program komputerowy jest tworzony zgodnie z regułami języka programowania w postaci kodu źródłowego lub kodu maszynowego.
+
+Aplikacja - program komputerowy instalowany na urządzeniu mobilnym.
+
+Skrypt - pliki tekstowe zawierające ciągi instrukcji (po jednej na linię). W odróżnieniu od zwykłych plików tekstowych, skrypty możemy uruchamiać tak jak zwykłe programy.
+
+Aplet - mały program komputerowy wykonujący jakąś określoną funkcję aplet uruchamiany jest zazwyczaj wewnątrz innego programu. W odróżnieniu od normalnej aplikacji, aplet nie może być uruchomiony bezpośrednio z systemu operacyjnego.
+
+jQuery – lekka biblioteka programistyczna dla języka JavaScript, ułatwiająca korzystanie z JavaScriptu (w tym manipulację drzewem DOM). Kosztem niewielkiego spadku wydajności w stosunku do profesjonalnie napisanego kodu w niewspomaganym JavaScripcie pozwala osiągnąć interesujące efekty animacji, dodać dynamiczne zmiany strony, wykonać zapytania AJAX. Większość wtyczek i skryptów opartych na jQuery działa na stronach nie wymagając zmian w kodzie HTML (np. zamienia klasyczne galerie złożone z miniatur linkujących do obrazków w dynamiczną galerię).
+
+Aby użyć biblioteki jQuery najpierw trzeba ją dodać do strony, w tym celu można dodać poniższy kod do naszej strony internetowej.
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+Powyższy kod doda najnowszą, z chwilą pisania tego artykułu, wersje jQuery, czyli 3.1.1. Aby w pełni móc skorzystać z biblioteki nasz kod dodajemy jak funkcję zwrotną DOM ready:
+
+$(document).ready(function() {
+    // nasz kod
+});
+lub jego skróconą wersję czyli:
+
+$(function() {
+    // nasz kod
+});
+
+Jeśli nasza strona korzysta z jakieś innej biblioteki, która używa znaku dolara możemy używać biblioteki jQuery w trybie no conflict
+
+jQuery.noConflict();
+
+jQuery(function($) {
+    // nasz kod
+});
+
+Mamy wtedy pewność, że nasza strona jest w pełni załadowana (mamy dostęp do DOM-u strony) i możemy zacząć ją manipulować. W dalszych przykładach pominę funkcje DOM ready.
