@@ -11,52 +11,54 @@
     </style>
 </head>
 <body bgcolor="pink">
-    <h1>Wybierz kształt, kolor i rozmiar</h1>
-
     <form name="form">
         <h3>Podaj kształt:</h3>
         <input type="radio" name="shape" value="square" checked> Kwadrat<br>
         <input type="radio" name="shape" value="triangle"> Trójkąt<br>
         <input type="radio" name="shape" value="circle"> Koło<br>
-
         <h3>Podaj kolor:</h3>
         <input type="radio" name="color" value="pink" checked> Ruszoffy<br>
         <input type="radio" name="color" value="blue"> Niebieski<br>
         <input type="radio" name="color" value="green"> Zielony<br>
-
         <h3>Podaj rozmiar:</h3>
         <input type="radio" name="size" value="50" checked> S<br>
         <input type="radio" name="size" value="100"> M<br>
         <input type="radio" name="size" value="150"> L<br>
+        <h3>Wybierz transformację:</h3>
+        <input type="radio" name="transform" value="none" checked> Brak<br>
+        <input type="radio" name="transform" value="rotate"> Obrót 45 stopni<br>
+        <input type="radio" name="transform" value="scale"> Skalowanie 1.5x<br>
     </form>
-
     <button onclick="generateShape()">Generuj kształt</button>
-
     <div id="generatedShape">
-        <!-- SVG z wygenerowanym kształtem -->
     </div>
-
     <script>
         function generateShape() {
-            // Pobierz wybrane wartości
             const shape = document.querySelector('input[name="shape"]:checked').value;
             const color = document.querySelector('input[name="color"]:checked').value;
             const size = document.querySelector('input[name="size"]:checked').value;
-
-            // Stwórz dynamiczny SVG
+            const transform = document.querySelector('input[name="transform"]:checked').value;
             let svgShape = '';
-
+            let transformAttr = '';
+            if (transform === 'rotate') {
+                const center = size / 2;
+                transformAttr = `transform="rotate(45 ${center} ${center})"`;
+            } else if (transform === 'scale') {
+                transformAttr = `transform="scale(1.5)"`;
+            }
             if (shape === 'square') {
-                svgShape = `<rect width="${size}" height="${size}" fill="${color}" stroke="black"/>`;
+                svgShape = `<rect width="${size}" height="${size}" fill="${color}" stroke="black" ${transformAttr}/>`;
             } else if (shape === 'triangle') {
                 const halfSize = size / 2;
-                svgShape = `<polygon points="0,${size} ${size},${size} ${halfSize},0" fill="${color}" stroke="black"/>`;
+                svgShape = `<polygon points="0,${size} ${size},${size} ${halfSize},0" fill="${color}" stroke="black" ${transformAttr}/>`;
             } else if (shape === 'circle') {
                 const radius = size / 2;
-                svgShape = `<circle cx="${radius}" cy="${radius}" r="${radius}" fill="${color}" stroke="black"/>`;
+                svgShape = `<circle cx="${radius}" cy="${radius}" r="${radius}" fill="${color}" stroke="black" ${transformAttr}/>`;
+            } else if (shape === 'hexagon') {
+                const halfSize = size / 2;
+                const height = (Math.sqrt(3) * halfSize).toFixed(2);  // Wysokość sześciokąta równobocznego
+                svgShape = `<polygon points="${halfSize},0 ${size},${height / 2} ${size},${height + height / 2} ${halfSize},${2 * height} 0,${height + height / 2} 0,${height / 2}" fill="${color}" stroke="black" ${transformAttr}/>`;
             }
-
-            // Wstaw wygenerowane SVG do kontenera
             document.getElementById('generatedShape').innerHTML = `
                 <svg width="${size}px" height="${size}px">
                     ${svgShape}
