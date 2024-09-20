@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator kształtów</title>
+    <style>
+        #generatedShape {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="pink">
+    <h1>Wybierz kształt, kolor i rozmiar</h1>
+
+    <form name="form">
+        <h3>Podaj kształt:</h3>
+        <input type="radio" name="shape" value="square" checked> Kwadrat<br>
+        <input type="radio" name="shape" value="triangle"> Trójkąt<br>
+        <input type="radio" name="shape" value="circle"> Koło<br>
+
+        <h3>Podaj kolor:</h3>
+        <input type="radio" name="color" value="pink" checked> Ruszoffy<br>
+        <input type="radio" name="color" value="blue"> Niebieski<br>
+        <input type="radio" name="color" value="green"> Zielony<br>
+
+        <h3>Podaj rozmiar:</h3>
+        <input type="radio" name="size" value="50" checked> S<br>
+        <input type="radio" name="size" value="100"> M<br>
+        <input type="radio" name="size" value="150"> L<br>
+    </form>
+
+    <button onclick="generateShape()">Generuj kształt</button>
+
+    <div id="generatedShape">
+        <!-- SVG z wygenerowanym kształtem -->
+    </div>
+
+    <script>
+        function generateShape() {
+            // Pobierz wybrane wartości
+            const shape = document.querySelector('input[name="shape"]:checked').value;
+            const color = document.querySelector('input[name="color"]:checked').value;
+            const size = document.querySelector('input[name="size"]:checked').value;
+
+            // Stwórz dynamiczny SVG
+            let svgShape = '';
+
+            if (shape === 'square') {
+                svgShape = `<rect width="${size}" height="${size}" fill="${color}" stroke="black"/>`;
+            } else if (shape === 'triangle') {
+                const halfSize = size / 2;
+                svgShape = `<polygon points="0,${size} ${size},${size} ${halfSize},0" fill="${color}" stroke="black"/>`;
+            } else if (shape === 'circle') {
+                const radius = size / 2;
+                svgShape = `<circle cx="${radius}" cy="${radius}" r="${radius}" fill="${color}" stroke="black"/>`;
+            }
+
+            // Wstaw wygenerowane SVG do kontenera
+            document.getElementById('generatedShape').innerHTML = `
+                <svg width="${size}px" height="${size}px">
+                    ${svgShape}
+                </svg>
+            `;
+        }
+    </script>
+</body>
+</html>
