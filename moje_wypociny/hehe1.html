@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hehe</title>
+    <style>
+        div {
+            background-color: rgb(193, 131, 184);
+            height: 300px;
+            width: 300px;
+            margin-left: 50px;
+        }
+        body {
+            background-color: rgb(230, 156, 218);
+        }
+        h1 {
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1" method="post">
+        <h1>Wybierz kształt: </h1>
+        <select id="ksztalt">
+            <option>Trojkat</option>
+            <option>Kolo</option>
+            <option>Prostokat</option>
+        </select><br>
+        <h1>Wybierz kolor:</h1>
+        <input type="color" id="kolor">
+        <br>
+        <h1>Wybierz rozmiar: </h1>
+        <label>
+            <input type="radio" name="rozmiar" value="duży" checked> Duży
+            <input type="radio" name="rozmiar" value="maly"> Mały<br>
+        </label>
+        <br>
+        <button type="button" onclick="Rysuj()">Rysuj</button><br><br>
+        <div id="dif"></div>
+    </form>
+    <script>
+        function Rysuj() {
+            var ksztalt = document.getElementById("ksztalt").value;
+            var kolor = document.getElementById("kolor").value;
+            var radiorozmiar = document.getElementsByName("rozmiar");
+            var miejsceAkcji = document.getElementById("dif");
+            miejsceAkcji.innerHTML = '';
+            var rozmiar;
+            for (var i = 0; i < radiorozmiar.length; i++) {
+                if (radiorozmiar[i].checked) {
+                    rozmiar = radiorozmiar[i].value;
+                }
+            }
+            if (ksztalt == "Trojkat") {
+                if (rozmiar == "duży") {
+                    miejsceAkcji.innerHTML = `<svg height="200" width="200">
+                                                <polygon points="100,10 40,190 190,190" fill="${kolor}" />
+                                              </svg>`;
+                } else if (rozmiar == "maly") {
+                    miejsceAkcji.innerHTML = `<svg height="100" width="100">
+                                                <polygon points="50,5 20,95 95,95" fill="${kolor}" />
+                                              </svg>`;
+                }
+            }
+            if(ksztalt == "Kolo"){
+                if(rozmiar=="duży"){
+                    miejsceAkcji.innerHTML = `<svg height="200" width="200">
+                                                <circle cx="100" cy="100" r="90" fill="${kolor}"/>
+                                              </svg>`;
+                }else if(rozmiar=="maly"){
+                    miejsceAkcji.innerHTML = `<svg height="100" width="100">
+                                                <circle cx="50" cy="50" r="40" fill="${kolor}"/></svg>`;
+                }
+            }
+            if(ksztalt=="Prostokat"){
+                if(rozmiar=="duży"){
+                    miejsceAkcji.innerHTML=`<svg width="200" height="200"><rect width="150" height="75" fill="${kolor}"/></svg>`;
+                }else if(rozmiar=="maly"){
+                    miejsceAkcji.innerHTML=`<svg width="100" height="100"><rect width="50" height="25" fill="${kolor}"/></svg>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
