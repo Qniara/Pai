@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: azure;
+            width: 300px;
+            height:300px;
+        }
+        body{
+            background-color: rgb(237, 159, 234);
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" method="post">
+        <h1>Wybierz kształt: </h1>
+        <input type="radio" name="ksztalt" value="Circle" checked> Kolo
+        <input type="radio" name="ksztalt" value="Rect"> Prostokat <br>
+        <h1>Wybierz kolor: </h1>
+        <input type="color" id="kolor"><br>
+        <h1>Podaj rozmiar: </h1>
+        <input type="radio" name="rozmiar" value="Big" checked> Duży
+        <input type="radio" name="rozmiar" value="Small"> Mały<br><br>
+        <input type="button" onclick="Rysuj()" value="Rysuj"><br><br>
+        <div id="dif"></div>
+    </form>
+    <script>
+        function Rysuj(){
+            var dif=document.getElementById("dif");
+            dif.innerHTML='';
+            var radioKsztalt=document.getElementsByName("ksztalt");
+            var radiorozmiar=document.getElementsByName("rozmiar");
+            var kolor=document.getElementById("kolor").value;
+            var ksztalt, rozmiar;
+            for(var i=0; i<radioKsztalt.length;i++){
+                if(radioKsztalt[i].checked){
+                    ksztalt=radioKsztalt[i].value;
+                }
+                if(radiorozmiar[i].checked){
+                    rozmiar=radiorozmiar[i].value;
+                }
+            }
+            if(ksztalt=="Circle"){
+                if(rozmiar=="Big"){
+                    dif.innerHTML=`<svg height="200px" width="200px"><circle cx="100" cy="100" r="90" fill="${kolor}"/></svg>`;
+                }else if(rozmiar=="Small"){
+                    dif.innerHTML=`<svg height="100" width="100"><circle cx="50" cy="50" r="25" fill="${kolor}"/></svg>`;
+                }
+            }
+            if(ksztalt=="Rect"){
+                if(rozmiar=="Big"){
+                    dif.innerHTML=`<svg height="200" width="200"><rect height="100" width="150" fill="${kolor}"/></svg>`;
+                }else if(rozmiar=="Small"){
+                    dif.innerHTML=`<svg><rect height="50" width="75" fill="${kolor}"/></svg>`;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
